@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>404</title>
+  <style>
+  @keyframes xz{
+  from{
+    transform:scale(1) rotate(0deg);
+    transform-origin: center;
+  }
+
+  to{
+    transform:scale(1) rotate(360deg);
+    transform-origin: center;
+  }
+}
+@keyframes py{
+  from{
+    transform:scale(0)
+  }
+  to{
+    transform:scale(1)
+  }
+}
+*{
+  margin:0;
+  padding:0;
+}
+ul{
+
+  display:flex;
+  width:40px;
+  height:40px;
+  flex-wrap:wrap;
+  animation: 0.1s xz linear infinite;
+}
+li{
+  list-style-type:none;
+  width:20px;
+  height:20px;
+}
+#gz{
+  width:1.5px;
+  background-color:black;
+  height:80px;
+  margin-left:20px;
+  margin-top:-20px;
+  transform: rotate(16deg);
+  transform-origin: top;
+}
+#ll{
+  margin-top:200px;
+  margin-left:60px;
+  position:relative;
+  top:90px;
+}
+#one{
+
+    background:linear-gradient(225deg,rgb(0, 247, 21) 50%,rgba(256,256,256,0.0) 50%);
+}
+#two{
+    background:linear-gradient(315deg,rgb(248, 245, 27) 50%,rgba(256,256,256,0.0) 50%);
+}
+#three{
+    background:linear-gradient(135deg,rgb(237, 6, 198) 50%,rgba(256,256,256,0.0) 50%);
+}
+#four{
+    background:linear-gradient(45deg,rgb(52, 59, 239) 50%,rgba(256,256,256,0.0) 50%);
+}
+#left_ear{
+  margin-left:120px;
+  background-color:black;
+  width:30px;
+  height:30px;
+  border-radius:50% 100% 50% 90%/50% 100% 50% 90%;
+  transform:rotate(80deg);
+  transform-origin:center;  
+}
+#right_ear{
+  margin-left:120px;
+  background-color:black;
+  width:30px;
+  height:30px;
+  border-radius:50% 100% 50% 90%/50% 100% 50% 90%;
+  transform:rotate(-10deg);
+  transform-origin:center; 
+  position:relative;
+  top:-30px;
+  left:60px;
+}
+#face{
+  margin-left:120px;
+  border:black solid 2px;
+  width:90px;
+  height:100px;
+  border-radius: 80% 80% 70% 70%;
+  position:relative;
+  top:-60px;
+  z-index:10;
+  background-color:#ffffff;
+}
+#left_eye{
+  width:10px;
+  height:5px;
+  border:black 6px solid;
+  border-radius:100% 100% 50% 50%;
+  position:relative;
+  left:15px;
+  top:19px;
+  transform:rotate(10deg);
+  transform-origin:center;
+}
+#right_eye{
+  width:10px;
+  height:5px;
+  border:black 6px solid;
+  border-radius:100% 100% 50% 50%;
+  position:relative;
+  left:50px;
+  top:9px;
+  transform:rotate(10deg);
+  transform-origin:center;
+}
+#norse{
+  width:20px;
+  height:9px;
+  border:black 6px solid;
+  border-radius:100% 100% 50% 50%;
+  position:relative;
+  left:24px;
+  top:20px;
+  transform:rotate(190deg);
+  transform-origin:center;
+}
+#body{
+  width:180px;
+  height:100px;
+  background-color:black;
+  border-radius:100% 100% 10% 10%/100% 100%;
+  position:relative;
+  top:-100px;
+  left:80px;
+  overflow:hidden;
+}
+#left{
+  width:40px;
+  height:100px;
+  background-color:black;
+  border-radius:90% 90% 30% 30%/40% 40% 30% 30%;
+  transform:rotate(-30deg);
+  position:relative;
+  top:-220px;
+  left:60px;
+  z-index:-1;
+}
+#right{
+  width:40px;
+  height:100px;
+  background-color:black;
+  border-radius:90% 90% 30% 30%/40% 40% 30% 30%;
+  transform:rotate(30deg);
+  position:relative;
+  top:-320px;
+  left:240px;
+  z-index:-1;
+}
+#dz{
+  width:100px;
+  height:50px;
+  background-color:#ffffff;
+  z-index:200;
+  border-radius:100% 100% 0% 0%;
+  position:relative;
+  top:50px;
+  left:40px;
+}
+#panda{
+  width:400px;
+  height:450px;
+  overflow:hidden;
+  margin:auto;
+  margin-top:-200px;
+
+}
+#info{
+  display:block;
+  text-align:center;
+  margin:auto;
+  margin-top:20px;
+  color:black;
+}
+#info a{
+  color:blue;
+  text-decoration:none;
+}
+  </style>
+</head>
+<body>
+<div id = "panda">
+<!-- 下巴 -->
+<div id="ll">
+<ul>
+  <li id="one"></li>
+  <li id="two"></li>
+  <li id="three"></li>
+  <li id="four"></li>
+</ul>
+  <div id = "gz"></div>
+</div>
+<!--身体-->
+<div id="left_ear"></div>
+<div id="right_ear"></div>
+  <div id="face">
+    <div id="left_eye"></div>
+    <div id="right_eye"></div>
+    <div id="norse"></div>
+    <div id="mouse"></div>
+  </div>
+
+  <div id="body">
+    <div id="dz"></div>
+  </div>
+  <div id ="left"></div>
+  <div id ="right"></div>
+  </div>
+  <h2 id ="info">404,页面找不到了，点击这里回到<a href="./index.html">快乐</a>!</h1>
+  </body>
+</html>
