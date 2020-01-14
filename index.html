@@ -1,27 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>木羽的树</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>木羽的树</title>
 </head>
+
 <body>
-    <h1>hello muyu</h1>
-    <div id="container"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-var gitment = new Gitment({
-  id: 'location.href', // 可选。默认为 location.href
-  owner: 'linklinco',
-  repo: 'linklinco.github.io',
-  oauth: {
-    client_id: 'd08656f3577ea981f6d7',
-    client_secret: '22283b68709de972f1de7424dcc3ffd932bf76d0',
-  },
-})
-gitment.render('container')
-</script>
+  <h1>hello muyu</h1>
+  <div id="container"></div>
+  <link rel="stylesheet" href="./css/gitment.css">
+  <script src="./js/gitment.js"></script>
+  <script>
+    var gitment = new Gitment({
+      id: 'location.href', // 可选。默认为 location.href
+      owner: 'linklinco',
+      repo: 'linklinco.github.io',
+      oauth: {
+        client_id: 'd08656f3577ea981f6d7',
+        client_secret: '22283b68709de972f1de7424dcc3ffd932bf76d0',
+      },
+    })
+    gitment.render('container')
+  </script>
 </body>
+
 </html>
