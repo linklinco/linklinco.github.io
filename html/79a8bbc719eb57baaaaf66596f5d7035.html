@@ -4,80 +4,469 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>No.13第二十二天到第二十四天：JavaScript里面的居民们--lincomycin--林可的博客(ง •_•)ง</title>
     <link rel="stylesheet" type="text/css" href="../css/markdown.css">
-    <style>
-        #markdown {
-            box-sizing: border-box;
-            min-width: 200px;
-            max-width: 980px;
-            margin: 0 auto;
-            margin-top: 20px;
-            margin-bottom: 70px;
-            padding: 45px;
-            background: #ffffff;
-            min-height: 60vh;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            font-family: sans-serif;
-        }
-
-        footer {
-            position: fixed;
-            bottom: 0px;
-            text-align: center;
-            width: 100%;
-            height: 50px;
-            line-height: 50px;
-            background-color: #24292e;
-            color: #f6f8fa;
-        }
-        body{
-            background-color: #f6f8fa;
-        }
-        body>header{
-            width: 100%;
-            height: 50px;
-            background-color: #24292e;
-        }
-        #top{
-            width: 50px;
-            height: 50px;
-            position: fixed;
-            right: 100px;
-            bottom: 100px;
-            background-color: #24292e;
-            color: #ffffff;
-            font-size: large;
-            line-height: 50px;
-            text-align: center;
-            text-decoration: none;
-            border-radius: 25px;
-        }
-        
-    </style>
+    <link rel="stylesheet" href="../css/article.css">
 </head>
 
 <body>
     <header>
-
+        <nav>
+            <div id="logo"><img src="../photo/favicon.png" alt="lincomycin--林可的博客"></div>
+            <ul>
+                <li><a href="../index.html">首页</a></li>
+                <li><a href="">归档</a></li>
+                <li><a href="">分类</a></li>
+                <li><a href="">关于</a></li>
+            </ul>
+        </nav>
     </header>
-    <div id="markdown">
-        <h1></h1>
-        <article class="markdown-body">
-            
-            
-            
+     <main class="clear">
+        <header>
+            <h1>No.13第二十二天到第二十四天：JavaScript里面的居民们</h1>
+            <div><span class="about">创建时间：20210120</span>
+                <span class="about">话题归类：<a href="http://a">#前端</a></span>
+            </div>
+        </header>
+        <div id="markdown">
+            <article>
+                <div class="markdown-body">
+                    <p>作业提交截止时间：09-01</p>
+<h1>第二十二天到第二十四天：JavaScript里面的居民们</h1>
+<h2>课程目标</h2>
+<p>掌握 JavaScript 中的各个数据类型、对象的概念及常用方法，这次课程的任务量比较多，但不要着急，也不要急于完成任务，认真写好每一个代码。加油！</p>
+<h2>课程描述</h2>
+<h3>阅读</h3>
+<p>首先，我们从变量和数据类型入手，同时学习一下 JavaScript 中的数字类型</p>
+<ul>
+<li><a href="http://www.w3school.com.cn/js/js_variables.asp">W3School 变量</a></li>
+<li><a href="http://www.w3school.com.cn/js/js_datatypes.asp">W3School 数据类型</a></li>
+<li><a href="https://blog.csdn.net/lxcao/article/details/71314605">JavaScript中值类型和引用类型的区别</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/First_steps/Variables">MDN 变量</a></li>
+<li><a href="http://www.w3school.com.cn/js/js_obj_number.asp">W3School 数字</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/First_steps/Math">MDN 数字</a></li>
+<li><a href="http://www.w3school.com.cn/jsref/jsref_obj_number.asp">Number</a></li>
+<li><a href="http://www.w3school.com.cn/jsref/jsref_obj_math.asp">Math</a></li>
+</ul>
+<h3>编码</h3>
+<p>首先练习数字相关的一些操作：</p>
+<pre><code>&lt;div&gt;
+    &lt;label&gt;Number A:&lt;input id="radio-a" type="radio" name="math-obj" value="a"&gt;&lt;/label&gt;&lt;input id="num-a" type="text"&gt;
+    &lt;label&gt;Number B:&lt;input id="radio-b" type="radio" name="math-obj" value="b"&gt;&lt;/label&gt;&lt;input id="num-b" type="text"&gt;
+&lt;/div&gt;
+&lt;div&gt;
+    &lt;button&gt;判断当前选中的输入框输入内容是否为数字&lt;/button&gt;
+    &lt;button&gt;把 A 四舍五入为 B 个小数位数的数字&lt;/button&gt;
+    &lt;button&gt;当前选中数字的绝对值&lt;/button&gt;
+    &lt;button&gt;对当前选中的数字进行上舍入&lt;/button&gt;
+    &lt;button&gt;对当前选中的数字进行下舍入&lt;/button&gt;
+    &lt;button&gt;把当前选中的数字四舍五入为最接近的整数&lt;/button&gt;
+    &lt;button&gt;返回 A 和 B 中的最高值&lt;/button&gt;
+    &lt;button&gt;返回 A 和 B 中的最低值&lt;/button&gt;        
+&lt;/div&gt;
+&lt;p id="result"&gt;&lt;/p&gt;
+</code></pre>
+<p>基于如上HTML，实现需求</p>
+<ul>
+<li>按照HTML中按钮的描述以此实现功能</li>
+<li>计算结果显示在 id 为 result 的 P 标签中</li>
+<li>除了第一个按钮，其它按钮操作时，都需要判断输入是否为数字，否则在 console 中输出错误信息</li>
+</ul>
+<h3>阅读</h3>
+<ul>
+<li><a href="http://www.w3school.com.cn/js/js_obj_string.asp">W3School 字符串</a></li>
+<li><a href="http://www.w3school.com.cn/jsref/jsref_obj_string.asp">W3School 字符串</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/First_steps/Strings">MDN JavaScript中的字符串</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/First_steps/Useful_string_methods">MDN 有用的字符串方法</a></li>
+</ul>
+<h3>编码</h3>
+<pre><code>&lt;div&gt;
+    &lt;label&gt;String A:
+        &lt;input id="radio-a" type="radio" checked="true" name="str-obj" value="a"&gt;
+    &lt;/label&gt;
+    &lt;textarea id="str-a"&gt;&lt;/textarea&gt;
+    &lt;label&gt;String B:
+        &lt;input id="radio-b" type="radio" name="str-obj" value="b"&gt;
+    &lt;/label&gt;
+    &lt;textarea id="str-b"&gt;&lt;/textarea&gt;        
+    &lt;label&gt;Num A：&lt;input id="num-a" type="number" value="0"&gt;&lt;/label&gt;
+    &lt;label&gt;Num B：&lt;input id="num-b" type="number" value="1"&gt;&lt;/label&gt;
+&lt;/div&gt;
+&lt;div&gt;
+    &lt;button&gt;获取当前选中输入的内容长度&lt;/button&gt;
+    &lt;button&gt;当前选中输入中的第3个字符&lt;/button&gt;
+    &lt;button&gt;把两个输入框的文字连接在一起输出（concat）&lt;/button&gt;
+    &lt;button&gt;输入B中的内容，在输入A的内容中第一次出现的位置（indexOf）&lt;/button&gt;
+    &lt;button&gt;输入A中的内容，在输入B的内容中最后一次出现的位置（lastIndexOf）&lt;/button&gt;
+    &lt;button&gt;使用slice获取选中输入框内容的部分内容，参数为num-a及num-b&lt;/button&gt;
+    &lt;button&gt;当前选中输入框的行数&lt;/button&gt;
+    &lt;button&gt;使用substr获取选中输入框内容的子字符串，参数为num-a及num-b&lt;/button&gt;
+    &lt;button&gt;把所选输入框中的内容全部转为大写&lt;/button&gt;
+    &lt;button&gt;把所选输入框中的内容全部转为小写&lt;/button&gt;
+    &lt;button&gt;把所选输入框中内容的半角空格全部去除&lt;/button&gt;
+    &lt;button&gt;把所选输入框中内容的a全部替换成另外一个输入框中的内容&lt;/button&gt;
+&lt;/div&gt;
+&lt;p id="result"&gt;&lt;/p&gt;
+</code></pre>
+<p>基于如上HTML，实现需求</p>
+<ul>
+<li>按照HTML中按钮的描述以此实现功能</li>
+<li>计算结果显示在 id 为 result 的 P 标签中</li>
+</ul>
+<h3>编码</h3>
+<pre><code>/*
+实现一个字符串头尾去除空格的函数
+注意需要去除的空格，包括全角、半角空格
+暂时不需要学习和使用正则表达式的方式
+*/
+function diyTrim(str) {
+    var result = "";
 
-        </article>
-    </div>
+    // do something
+
+    return result
+}
+
+// 测试用例
+console.log(diyTrim(' a f b    ')); // -&gt;a f b
+console.log(diyTrim('    ffdaf    ')); // -&gt;ffdaf
+console.log(diyTrim('1    ')); // -&gt;1
+console.log(diyTrim('　　f')); // -&gt;f
+console.log(diyTrim('  　  a f b 　　 ')); // -&gt;a f b
+console.log(diyTrim(' ')); // -&gt;
+console.log(diyTrim('　')); // -&gt;
+console.log(diyTrim('')); // -&gt;
+
+/*
+去掉字符串str中，连续重复的地方
+*/
+function removeRepetition(str) {
+    var result = "";
+
+    // do something
+
+    return result;
+}
+
+// 测试用例
+console.log(removeRepetition("aaa")); // -&gt;a
+console.log(removeRepetition("abbba")); // -&gt;aba
+console.log(removeRepetition("aabbaabb")); // -&gt;abab
+console.log(removeRepetition("")); // -&gt;
+console.log(removeRepetition("abc")); // -&gt;abc
+</code></pre>
+<p>如以上代码，分别实现 diyTrim 及 removeRepetition 函数，并跑通代码中的测试用例。</p>
+<h3>阅读</h3>
+<ul>
+<li><a href="http://www.w3school.com.cn/js/js_objects.asp">W3School 对象</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Objects/Basics">MDN JavaScript 对象基础</a></li>
+</ul>
+<h3>编码</h3>
+<pre><code>var tree = {
+    "id": 0,
+    "name": "root",
+    "left": {
+        "id": 1,
+        "name": "Simon",
+        "left": {
+            "id": 3,
+            "name": "Carl",
+            "left": {
+                "id": 7,
+                "name": "Lee",
+                "left": {
+                    "id": 11,
+                    "name": "Fate"
+                }
+            },
+            "right": {
+                "id": 8,
+                "name": "Annie",
+                "left": {
+                    "id": 12,
+                    "name": "Saber"
+                }
+            }
+        },
+        "right": {
+            "id": 4,
+            "name": "Tony",
+            "left": {
+                "id": 9,
+                "name": "Candy"
+            }
+        }
+    },
+    "right": {
+        "id": 2,
+        "name": "right",
+        "left": {
+            "id": 5,
+            "name": "Carl",
+        },
+        "right": {
+            "id": 6,
+            "name": "Carl",
+            "right": {
+                "id": 10,
+                "name": "Kai"
+            }        
+        }
+    }
+}
+
+// 假设id和name均不会重复，根据输入name找到对应的id
+function findIdByName(name) {
+
+}
+
+// 假设id和name均不会重复，根据输入id找到对应的name
+function findNameById(id) {
+
+}
+
+// 把这个对象中所有的名字以“前序遍历”的方式全部输出到console中
+function getListWithDLR() {
+
+}
+
+// 把这个对象中所有的名字以“中序遍历”的方式全部输出到console中
+function getListWithLDR() {
+
+}
+
+// 把这个对象中所有的名字以“后序遍历”的方式全部输出到console中
+function getListWithLRD() {
+
+}
+</code></pre>
+<p>有如上对象，分别实现代码下方的几个函数，满足以下需求：</p>
+<ul>
+<li>假设id和name均不会重复，根据输入name找到对应的id</li>
+<li>假设id和name均不会重复，根据输入id找到对应的name</li>
+<li>把这个对象中所有的名字以“前序遍历”的方式全部输出到console中</li>
+<li>把这个对象中所有的名字以“中序遍历”的方式全部输出到console中</li>
+<li>把这个对象中所有的名字以“后序遍历”的方式全部输出到console中</li>
+</ul>
+<h3>阅读</h3>
+<p>接下来我们学习一个非常有用的数据结构：数组</p>
+<ul>
+<li><a href="http://www.w3school.com.cn/js/js_obj_array.asp">W3School 数组</a></li>
+<li><a href="http://www.w3school.com.cn/jsref/jsref_obj_array.asp">W3School 数组参考</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/First_steps/Arrays">MDN 数组</a></li>
+<li><a href="https://baike.baidu.com/item/%E9%98%9F%E5%88%97/14580481?fr=aladdin">队列</a></li>
+<li><a href="https://baike.baidu.com/item/%E6%A0%88/12808149">栈</a></li>
+</ul>
+<h3>编码</h3>
+<p>练习如何使用数组来实现队列，综合考虑使用数组的 push，pop，shift，unshift操作</p>
+<pre><code>&lt;input id="queue-input" type="text"&gt;
+&lt;p id="queue-cont"&gt;队列内容：apple-&amp;gt;pear&lt;/p&gt;    
+&lt;button id="in-btn"&gt;入队&lt;/button&gt;
+&lt;button id="out-btn"&gt;出队&lt;/button&gt;
+&lt;button id="font-btn"&gt;打印队头元素内容&lt;/button&gt;
+&lt;button id="empty-btn"&gt;判断队列是否为空&lt;/button&gt;
+
+&lt;script&gt;
+
+var queue = ["apple", "pear"];
+
+&lt;/script&gt;
+</code></pre>
+<p>基于以上代码，实现如按钮中描述的功能：</p>
+<ul>
+<li>实现如阅读材料中，队列的相关入队、出队、获取队头、判空的操作</li>
+<li>队头对应数组中最后一个元素</li>
+<li>入队和出队操作后，需要在 id 为 queue-cont 的 p 标签中更新显示队列中的内容，队头在最右侧，中间用 -&gt; 连接（练习使用数组的join方法）</li>
+</ul>
+<h3>编码</h3>
+<p>对上面练习稍作小调整：</p>
+<pre><code>&lt;input id="queue-input" type="text"&gt;
+&lt;p id="queue-cont"&gt;队列内容：apple&amp;lt;-pear&lt;/p&gt;    
+&lt;button id="in-btn"&gt;入队&lt;/button&gt;
+&lt;button id="out-btn"&gt;出队&lt;/button&gt;
+&lt;button id="font-btn"&gt;打印队头元素内容&lt;/button&gt;
+&lt;button id="empty-btn"&gt;判断队列是否为空&lt;/button&gt;
+
+&lt;script&gt;
+
+var queue = ["apple", "pear"];
+
+&lt;/script&gt;
+</code></pre>
+<p>基于以上代码，实现如按钮中描述的功能：</p>
+<ul>
+<li>实现如阅读材料中，队列的相关入队、出队、获取队头、判空的操作</li>
+<li>
+<ul>
+<li>队头对应数组中第一个元素</li>
+</ul>
+</li>
+<li>入队和出队操作后，需要在 id 为 queue-cont 的 p 标签中更新显示队列中的内容，队头在最左侧，中间用 &lt;- 连接（练习使用数组的join方法） </li>
+</ul>
+<h3>编码</h3>
+<p>练习如何使用数组来实现栈，综合考虑使用数组的 push，pop，shift，unshift操作</p>
+<pre><code>&lt;input id="stack-input" type="text"&gt;
+&lt;p id="stack-cont"&gt;栈内容：apple-gt;pear&lt;/p&gt;    
+&lt;button id="push-btn"&gt;进栈&lt;/button&gt;
+&lt;button id="pop-btn"&gt;退栈&lt;/button&gt;
+&lt;button id="font-btn"&gt;打印栈顶元素内容&lt;/button&gt;
+&lt;button id="empty-btn"&gt;判断栈是否为空&lt;/button&gt;
+
+&lt;script&gt;
+
+var stack = ["apple", "pear"];
+
+&lt;/script&gt;
+</code></pre>
+<p>基于以上代码，实现如按钮中描述的功能：</p>
+<ul>
+<li>实现如阅读材料中，队列的相关进栈、退栈、获取栈顶、判空的操作</li>
+<li>栈顶对应数组中最后一个元素</li>
+<li>进栈和退栈操作后，需要在 id 为 stack-cont 的 p 标签中更新显示栈中的内容，栈顶在最右侧，中间用 -&gt; 连接（练习使用数组的join方法）</li>
+</ul>
+<h3>编码</h3>
+<p>对上面练习进行小调整</p>
+<pre><code>&lt;input id="stack-input" type="text"&gt;
+&lt;p id="stack-cont"&gt;栈内容：applelt;-pear&lt;/p&gt;    
+&lt;button id="push-btn"&gt;进栈&lt;/button&gt;
+&lt;button id="pop-btn"&gt;退栈&lt;/button&gt;
+&lt;button id="font-btn"&gt;打印栈顶元素内容&lt;/button&gt;
+&lt;button id="empty-btn"&gt;判断栈是否为空&lt;/button&gt;
+
+&lt;script&gt;
+
+var stack = ["apple", "pear"];
+
+&lt;/script&gt;
+</code></pre>
+<p>基于以上代码，实现如按钮中描述的功能：</p>
+<ul>
+<li>实现如阅读材料中，队列的相关进栈、退栈、获取栈顶、判空的操作</li>
+<li>栈顶对应数组中第一个元素</li>
+<li>进栈和退栈操作后，需要在 id 为 stack-cont 的 p 标签中更新显示栈中的内容，栈顶在最左侧，中间用 -&lt; 连接（练习使用数组的join方法）</li>
+</ul>
+<h3>阅读</h3>
+<ul>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/sort">MDN 排序</a></li>
+</ul>
+<h3>编码</h3>
+<pre><code>var arr = [43, 54, 4, -4, 84, 100, 58, 27, 140];
+</code></pre>
+<p>将上面数组分别按从大到小以及从小到大进行排序后在console中输出</p>
+<pre><code>var arr = ['apple', 'dog', 'cat', 'car', 'zoo', 'orange', 'airplane'];
+</code></pre>
+<p>将上面数组分别按字母顺序a-z及z-a进行排序，在console中输出</p>
+<pre><code>var arr = [[10, 14], [16, 60], [7, 44], [26, 35], [22, 63]];
+</code></pre>
+<p>将上面的二维数组，按照每个元素中第二个数从大到小的顺序进行排序输出，输出结果应该为：</p>
+<pre><code>[[22, 63], [16, 60], [7, 44], [26, 35], [10, 14]]
+
+
+
+var arr = [
+    {
+        id: 1,
+        name: 'candy',
+        value: 40
+    }, {
+        id: 2,
+        name: 'Simon',
+        value: 50
+    }, {
+        id: 3,
+        name: 'Tony',
+        value: 45
+    }, {
+        id: 4,
+        name: 'Annie',
+        value: 60
+    }
+];
+</code></pre>
+<p>将上面数组分别按元素对象的value值从小到大进行排序后输出</p>
+<h3>编码</h3>
+<p>学习通用的数据用不同的数据结构进行存储，以及相互的转换</p>
+<p>对象转为数组：</p>
+<pre><code>var scoreObject = {
+    "Tony": {
+        "Math": 95,
+        "English": 79,
+        "Music": 68
+    }, 
+    "Simon": {
+        "Math": 100,
+        "English": 95,
+        "Music": 98
+    }, 
+    "Annie": {
+        "Math": 54,
+        "English": 65,
+        "Music": 88
+    }
+}
+</code></pre>
+<p>如上有一个用来存储学习成绩的对象，编写一个函数，将其转为如下的二维数组</p>
+<pre><code>var scoreArray = [
+    ["Tony", 95, 79, 68],
+    ……
+];
+</code></pre>
+<p>数组转为对象：</p>
+<pre><code>var menuArr = [
+    [1, "Area1", -1],
+    [2, "Area2", -1],
+    [3, "Area1-1", 1],
+    [4, "Area1-2", 1],
+    [5, "Area2-1", 2],
+    [6, "Area2-2", 2],
+    [7, "Area1-2-3", 4],
+    [8, "Area2-2-1", 6],
+];
+</code></pre>
+<p>如上有一个用来存储多级菜单数据的数组，编写一个函数，将其转为如下的对象</p>
+<pre><code>var menuObject = {
+    "1": {
+        name: "Area1",
+        subMenu: {
+            "3": {
+                name: "Area1-1"
+            },
+            "4": {
+                name: "Area1-2",
+                subMenu: {
+                    "7": {
+                        name: "Area1-2-3"
+                    }
+                }
+            }
+        }
+    }
+
+    ……
+
+}
+</code></pre>
+<h2>进阶任务</h2>
+<p>如果你很快就完成上面的任务，可以去LeetCode上去多进行一些练习。</p>
+<h2>提交</h2>
+<p>把你今天觉得做得最好的代码放在Github后进行提交</p>
+<h2>总结</h2>
+<p>依然把今天的学习用时，收获，问题进行记录</p>
+<h2>下一个任务预告</h2>
+<p>下一个任务将继续学习 JavaScript，我们将接触更多的 JavaScript 对象</p>
+                </div>
+            </article>
+            <aside></aside>
+        </div>
+    </main>
+
     <footer>
         Made with ❤️ by <a href="https://linklinco.github.io" style="text-decoration:none">Linco</a>🎉
     </footer>
-    <a href="#markdown" id="top">^</a>
 </body>
+
+<script>
+
+</script>
 
 </html>
