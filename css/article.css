@@ -90,10 +90,13 @@ aside{
     border-radius: 25px;
     background-color: black;
     font-size: 30px;
-    margin: auto;
     position: absolute;
     bottom: 10px;
+    left: 0;
+    right: 0;
     color: #ffffff;
+    text-align: center;
+    line-height: 50px;
 }
 
 
