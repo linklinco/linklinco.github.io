@@ -46,12 +46,25 @@ ul{
 }
 li{
     list-style-type: none;
+    height: 40px;
+    line-height: 40px;
 }
 a{
     text-decoration: none;
     color: blueviolet;
 }
 li>span{
-    display: inline;
-    margin-left: solid 10px #153;
+  vertical-align: middle;
+}
+
+li:before {
+  display: inline-block;
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: blue;
+  border-radius: 15px;
+  line-height: 40px;
+  vertical-align: middle;
+  margin: 0 10px 0 20px;
 }
