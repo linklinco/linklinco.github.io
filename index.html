@@ -137,6 +137,7 @@
   var spans = document.querySelectorAll('span');
   for(var span in spans){
     sap = spans[span].innerText;
+    console.log(sap);
     spans[span].innerText = sap[0,4]+"-"+sap[4,6]+"-"+sap[6,8];
   }
 </script>
