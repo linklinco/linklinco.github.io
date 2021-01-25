@@ -138,7 +138,7 @@
   for(var span in spans){
     sap = spans[span].innerText;
     console.log(sap);
-    spans[span].innerText = sap[0,4]+"-"+sap[4,6]+"-"+sap[6,8];
+    spans[span].innerText = sap.substring(0, 4)+"-"+sap.substring(4, 6)+"-"+sap.substring(6, 8);
   }
 </script>
 </html>
