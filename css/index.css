@@ -41,8 +41,17 @@ footer {
     background-color: #24292e;
     color: #f6f8fa;
   }
-
+ul{
+    border-left: cornflowerblue dashed 2px;
+}
 li{
     list-style-type: none;
-    
+}
+a{
+    text-decoration: none;
+    color: blueviolet;
+}
+li>span{
+    display: inline;
+    margin-left: solid 10px #153;
 }
