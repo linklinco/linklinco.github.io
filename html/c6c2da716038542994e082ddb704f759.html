@@ -24,7 +24,7 @@
      <main class="clear">
         <header>
             <h1>No.3第三天：让简历有点色彩</h1>
-            <div><span class="about">创建时间：20200103</span>
+            <div><span class="about">创建时间：<span id="time">20200103</span></span>
                 <span class="about">话题归类：<a href="http://a">#前端</a></span>
             </div>
         </header>
@@ -120,5 +120,13 @@ CSS2-20110607/">标准文档</a>，至于看标准规范有什么用，欢迎移
 <script>
 
 </script>
+<script>
+    var spans = document.querySelectorAll('#time');
+    for(var span in spans){
+      sap = spans[span].innerText;
+      console.log(sap);
+      spans[span].innerText = sap.substring(0, 4)+"-"+sap.substring(4, 6)+"-"+sap.substring(6, 8);
+    }
+  </script>
 
 </html>

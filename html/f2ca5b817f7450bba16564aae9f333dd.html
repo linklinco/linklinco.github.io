@@ -24,7 +24,7 @@
      <main class="clear">
         <header>
             <h1>No.14第二十五天到第二十七天 倒数开始 滴答滴 滴答滴</h1>
-            <div><span class="about">创建时间：20200114</span>
+            <div><span class="about">创建时间：<span id="time">20200114</span></span>
                 <span class="about">话题归类：<a href="http://a">#前端</a></span>
             </div>
         </header>
@@ -249,5 +249,13 @@ GoSteps(null);  // 0次
 <script>
 
 </script>
+<script>
+    var spans = document.querySelectorAll('#time');
+    for(var span in spans){
+      sap = spans[span].innerText;
+      console.log(sap);
+      spans[span].innerText = sap.substring(0, 4)+"-"+sap.substring(4, 6)+"-"+sap.substring(6, 8);
+    }
+  </script>
 
 </html>

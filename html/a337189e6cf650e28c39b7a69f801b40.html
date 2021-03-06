@@ -24,7 +24,7 @@
      <main class="clear">
         <header>
             <h1>No.16第三十一到第三十三天：我是精明的小卖家（一）</h1>
-            <div><span class="about">创建时间：20200116</span>
+            <div><span class="about">创建时间：<span id="time">20200116</span></span>
                 <span class="about">话题归类：<a href="http://a">#前端</a></span>
             </div>
         </header>
@@ -252,5 +252,13 @@ function 渲染新的表格() {
 <script>
 
 </script>
+<script>
+    var spans = document.querySelectorAll('#time');
+    for(var span in spans){
+      sap = spans[span].innerText;
+      console.log(sap);
+      spans[span].innerText = sap.substring(0, 4)+"-"+sap.substring(4, 6)+"-"+sap.substring(6, 8);
+    }
+  </script>
 
 </html>

@@ -24,7 +24,7 @@
      <main class="clear">
         <header>
             <h1>No.24第五十四天到第五十七天：足球小将（一）</h1>
-            <div><span class="about">创建时间：20200124</span>
+            <div><span class="about">创建时间：<span id="time">20200124</span></span>
                 <span class="about">话题归类：<a href="http://a">#前端</a></span>
             </div>
         </header>
@@ -133,5 +133,13 @@
 <script>
 
 </script>
+<script>
+    var spans = document.querySelectorAll('#time');
+    for(var span in spans){
+      sap = spans[span].innerText;
+      console.log(sap);
+      spans[span].innerText = sap.substring(0, 4)+"-"+sap.substring(4, 6)+"-"+sap.substring(6, 8);
+    }
+  </script>
 
 </html>
