@@ -265,15 +265,14 @@ CSS2-20110607/">标准文档</a>，至于看标准规范有什么用，欢迎移
 </body>
 
 <script>
-
-</script>
-<script>
     var spans = document.querySelectorAll('#time');
     for (var span in spans) {
         sap = spans[span].innerText;
         console.log(sap);
         spans[span].innerText = sap.substring(0, 4) + "-" + sap.substring(4, 6) + "-" + sap.substring(6, 8);
     }
+</script>
+<script>
     setInterval(() => {
         let hour = document.getElementById("hour");
         let min = document.getElementById("min");
@@ -287,5 +286,4 @@ CSS2-20110607/">标准文档</a>，至于看标准规范有什么用，欢迎移
         hour.style.transform = `rotate(${hours}deg)`;
     }, 100);
 </script>
-
 </html>

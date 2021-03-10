@@ -280,15 +280,14 @@
 </body>
 
 <script>
-
-</script>
-<script>
     var spans = document.querySelectorAll('#time');
     for (var span in spans) {
         sap = spans[span].innerText;
         console.log(sap);
         spans[span].innerText = sap.substring(0, 4) + "-" + sap.substring(4, 6) + "-" + sap.substring(6, 8);
     }
+</script>
+<script>
     setInterval(() => {
         let hour = document.getElementById("hour");
         let min = document.getElementById("min");
@@ -302,5 +301,4 @@
         hour.style.transform = `rotate(${hours}deg)`;
     }, 100);
 </script>
-
 </html>
