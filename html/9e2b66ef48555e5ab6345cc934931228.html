@@ -7,6 +7,134 @@
     <title>No.12第二十到第二十一天：让你和页面对话--lincomycin--林可的博客(ง •_•)ง</title>
     <link rel="stylesheet" type="text/css" href="../css/markdown.css">
     <link rel="stylesheet" href="../css/article.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        #clock {
+            background-color: #ffffff;
+            width: 200px;
+            height: 200px;
+            border-radius: 120px;
+            border: 20px #cce5ff solid;
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+
+        .number {
+            width: 20px;
+            height: 20px;
+            color: #0066cc;
+            text-align: center;
+            line-height: 20px;
+            position: absolute;
+            left: 70px;
+            top: -20px;
+            border-radius: 10px;
+            transform-origin: 10px 100px;
+        }
+
+        #hour {
+            width: 10px;
+            height: 60px;
+            background-color: black;
+            border-radius: 5px;
+            position: absolute;
+            left: 75px;
+            top: 20px;
+            transform-origin: 5px 60px;
+            transform: rotate(90deg);
+        }
+
+        #min {
+            width: 8px;
+            height: 80px;
+            background-color: black;
+            border-radius: 5px;
+            position: absolute;
+            left: 76px;
+            top: 0px;
+            transform-origin: 4px 80px;
+            transform: rotate(45deg);
+        }
+
+        #sec {
+            width: 4px;
+            height: 80px;
+            background-color: red;
+            border-radius: 5px;
+            position: absolute;
+            left: 78px;
+            top: 0px;
+            transform-origin: 2px 80px;
+            transform: rotate(45deg);
+        }
+
+        #cent {
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            border-radius: 10px;
+            position: absolute;
+            left: 70px;
+            top: 70px;
+        }
+
+
+        #number1 {
+            transform: rotate(30deg);
+        }
+
+        #number2 {
+            transform: rotate(60deg);
+        }
+
+        #number3 {
+            transform: rotate(90deg);
+        }
+
+        #number4 {
+            transform: rotate(120deg);
+        }
+
+        #number5 {
+            transform: rotate(150deg);
+        }
+
+        #number6 {
+            transform: rotate(180deg);
+        }
+
+        #number7 {
+            transform: rotate(210deg);
+        }
+
+        #number8 {
+            transform: rotate(240deg);
+        }
+
+        #number9 {
+            transform: rotate(270deg);
+        }
+
+        #number10 {
+            transform: rotate(300deg);
+        }
+
+        #number11 {
+            transform: rotate(330deg);
+        }
+
+        #number12 {
+            transform: rotate(360deg);
+        }
+    </style>
 </head>
 
 <body>
@@ -21,7 +149,7 @@
             </ul>
         </nav>
     </header>
-     <main class="clear">
+    <main class="clear">
         <header>
             <h1>No.12第二十到第二十一天：让你和页面对话</h1>
             <div><span class="about">创建时间：<span id="time">20200112</span></span>
@@ -222,6 +350,25 @@
                 </div>
             </article>
             <aside>
+                <div id="clock">
+                    <div class="number" id="number1">1</div>
+                    <div class="number" id="number2">2</div>
+                    <div class="number" id="number3">3</div>
+                    <div class="number" id="number4">4</div>
+                    <div class="number" id="number5">5</div>
+                    <div class="number" id="number6">6</div>
+                    <div class="number" id="number7">7</div>
+                    <div class="number" id="number8">8</div>
+                    <div class="number" id="number9">9</div>
+                    <div class="number" id="number10">10</div>
+                    <div class="number" id="number11">11</div>
+                    <div class="number" id="number12">12</div>
+                    <div id="sec"></div>
+                    <div id="min"></div>
+                    <div id="hour"></div>
+                    <div id="cent"></div>
+                </div>
+
                 <a href="#markdown" id="goup">^</a>
             </aside>
         </div>
@@ -237,11 +384,23 @@
 </script>
 <script>
     var spans = document.querySelectorAll('#time');
-    for(var span in spans){
-      sap = spans[span].innerText;
-      console.log(sap);
-      spans[span].innerText = sap.substring(0, 4)+"-"+sap.substring(4, 6)+"-"+sap.substring(6, 8);
+    for (var span in spans) {
+        sap = spans[span].innerText;
+        console.log(sap);
+        spans[span].innerText = sap.substring(0, 4) + "-" + sap.substring(4, 6) + "-" + sap.substring(6, 8);
     }
-  </script>
+    setInterval(() => {
+        let hour = document.getElementById("hour");
+        let min = document.getElementById("min");
+        let sec = document.getElementById("sec");
+        let time = new Date();
+        let second = time.getSeconds() * 6
+        let minutes = (time.getMinutes() + second / 360) * 6;
+        let hours = (time.getHours() + minutes / 360) * 30;
+        sec.style.transform = `rotate(${second}deg)`;
+        min.style.transform = `rotate(${minutes}deg)`;
+        hour.style.transform = `rotate(${hours}deg)`;
+    }, 100);
+</script>
 
 </html>
