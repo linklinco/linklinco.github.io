@@ -9,6 +9,7 @@
         *{
             margin:0;
             padding: 0;
+            font-family:   Arial, sans-serif;
         }
         body{
             background-color: black;
@@ -64,7 +65,8 @@
         sec.innerHTML = add_zero(now.getSeconds());
     }
     window.onload = function(){
-        setInterval(() => {
+        var el = document.documentElement;
+         setInterval(() => {
             change();
         },100)
     }
