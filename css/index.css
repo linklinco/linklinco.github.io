@@ -1,0 +1,133 @@
+footer {
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    background-color: #24292e;
+    color: #f6f8fa;
+}
+
+header {
+    width: 100%;
+    height: 50px;
+    background-color: black;
+}
+
+header>nav {
+    min-width: 300px;
+    max-width: 960px;
+    margin: auto;
+    padding: 0 100px;
+}
+
+#logo {
+    float: left;
+    height: 50px;
+}
+
+#logo>img {
+    width: 40px;
+    height: 40px;
+    line-height: 50px;
+    margin: 5px 10px;
+}
+
+nav>ul {
+    float: right;
+}
+
+nav>ul>li {
+    float: left;
+    margin: 0 10px;
+    line-height: 50px;
+    color: #ffffff;
+    list-style-type: none;
+}
+
+nav>ul>li>a {
+    color: #ffffff;
+}
+
+
+.main_blog {
+    overflow: hidden;
+    background-image: url(../photos/index.jpg);
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+
+}
+
+
+
+.about {
+    width: 312px;
+    float: left;
+    font-size: 16px;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.about ul li {
+    color: #ffffff;
+    font-size: 14px;
+    margin: 10px 5px;
+    background-color: #24292e;
+    border-radius: 50px;
+    padding: 10px;
+}
+
+.about ul li a {
+    color: #07c160;
+}
+
+.about ul li:first-child {
+    color: rgba(0, 0, 0, .9);
+    background-color: #07c160;
+    font-size: 24px;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 26px;
+}
+
+.about ul {
+    background-color: rgba(233, 233, 233, .6);
+    align-items: center;
+    padding: 10px 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    height: 80px;
+    overflow: hidden;
+}
+
+.about ul:hover {
+    height: auto;
+}
+
+.show {
+    padding: 40px 88px;
+    margin: 10px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-color: rgba(233, 233, 233, .6);
+    padding-bottom: 20000px;
+    margin-bottom: -20000px;
+    overflow: hidden;
+    min-height: 100vh;
+}
+
+@media (max-width:800px) {
+    .about {
+        float: none;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .show {
+        padding: 20px;
+    }
+}
