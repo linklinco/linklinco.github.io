@@ -31,6 +31,7 @@ function gethash() {
 
 function changedata(data) {
     let main = document.querySelector('.show');
+    main.className = 'show';
     main.innerHTML = '';
     let md = document.createElement('article');
     md.setAttribute('class', 'markdown-body')
@@ -100,12 +101,19 @@ If you have any problems in programming, or have any strange ideas, please conta
 <h4 align="center">Made with ❤️ by <a href="https://linklinco.github.io" style="text-decoration:none">Linco</a>🎉</h4>`}
     return aboutme
 }
+function setlist() {
+    console.log(1);
+    let main = document.querySelector('.show');
+    main.classList.add('notshow');
 
+}
 
 window.onload = function () {
     init();
     if (gethash() === '') {
         changedata(aboutme());
+    } else if (gethash() === "#articlelist") {
+        setlist()
     } else {
         let url = gethash().substring(1);
         http(url, changedata);
@@ -113,8 +121,12 @@ window.onload = function () {
 
 }
 window.onhashchange = function () {
+    console.log(gethash());
     if (gethash() === '') {
         changedata(aboutme());
+    } else if (gethash() === "#articlelist") {
+        setlist()
+
     } else {
         let url = gethash().substring(1);
         let main = document.querySelector('.show');
