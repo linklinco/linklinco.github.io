@@ -65,6 +65,7 @@ nav>ul>li>a {
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 100vh;
+    padding-bottom: 100px;
 
 }
 
@@ -135,9 +136,31 @@ nav>ul>li>a {
         float: none;
         width: 100%;
         box-sizing: border-box;
+
     }
 
     .show {
         padding: 20px;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+    }
+
+    /* //ios设备不支持解决方案 */
+    .main_blog {
+        background: rgba(255, 255, 255, 0) center 0 no-repeat;
+        background-size: 100%;
+        background-attachment: fixed;
+    }
+
+    .main_blog::before {
+        content: ' ';
+        position: fixed;
+        z-index: -1;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: url(../photos/2.jpeg) center 0 no-repeat;
+        background-size: 100%;
     }
 }
