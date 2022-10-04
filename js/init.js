@@ -47,6 +47,7 @@ function init() {
             var tmp = document.createElement('ul');
             let ls = document.createElement('li');
             ls.innerText = i.toUpperCase();
+            ls.className = 'biu';
             tmp.appendChild(ls);
             for (let j of data[i]) {
                 var m = document.createElement('li');
@@ -66,8 +67,18 @@ function init() {
         if (e.target.tagName === 'A') {
             let url = e.target.getAttribute('href');
             sethash(url);
-
         };
+        if (e.target.className = 'biu') {
+            console.log(1);
+            if (e.target.parentNode.style.height === 'auto') {
+                e.target.parentNode.style.height = '75px';
+                e.target.style.background = '#07c160';
+            } else {
+                e.target.parentNode.style.height = 'auto';
+                e.target.style.background = 'green';
+            }
+
+        }
         e.preventDefault();
     })
 }
@@ -122,6 +133,12 @@ function setlist() {
     main.classList.add('notshow');
 
 }
+//这里写点击切换函数
+function biu() {
+
+}
+
+
 
 window.onload = function () {
     init();

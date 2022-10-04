@@ -68,6 +68,7 @@ footer {
 }
 
 .about ul {
+    user-select: none;
     background-color: rgba(233, 233, 233, .6);
     align-items: center;
     padding: 10px 10px;
@@ -75,10 +76,6 @@ footer {
     margin-bottom: 10px;
     height: 75px;
     overflow: hidden;
-}
-
-.about ul:hover {
-    height: auto;
 }
 
 .show {
