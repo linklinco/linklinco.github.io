@@ -11,50 +11,7 @@ footer {
     color: #f6f8fa;
 }
 
-body {
-    overflow-x: hidden;
-}
 
-header {
-    width: 100%;
-    height: 50px;
-    background-color: black;
-}
-
-header>nav {
-    min-width: 300px;
-    max-width: 960px;
-    margin: auto;
-    padding: 0 100px;
-}
-
-#logo {
-    float: left;
-    height: 50px;
-}
-
-#logo>img {
-    width: 40px;
-    height: 40px;
-    line-height: 50px;
-    margin: 5px 10px;
-}
-
-nav>ul {
-    float: right;
-}
-
-nav>ul>li {
-    float: left;
-    margin: 0 10px;
-    line-height: 50px;
-    color: #ffffff;
-    list-style-type: none;
-}
-
-nav>ul>li>a {
-    color: #ffffff;
-}
 
 
 .main_blog {
@@ -91,6 +48,10 @@ nav>ul>li>a {
     border-radius: 50px;
     padding: 10px;
     line-height: 35px;
+}
+
+.about ul li:hover {
+    transform: scale(1.05);
 }
 
 .about ul li a {
@@ -164,4 +125,97 @@ nav>ul>li>a {
         background: url(../photos/2.jpeg) center 0 no-repeat;
         background-size: cover;
     }
+}
+
+
+/* 导航栏部分 */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+a:visited {
+    color: #fff;
+}
+
+header.dhl {
+    background-color: black;
+    position: relative;
+}
+
+header.dhl>nav {
+    max-width: 1000px;
+    margin: 0 auto;
+    height: 50px;
+    background-color: black;
+    color: #fff;
+    padding: 10px 40px;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    justify-items: center;
+}
+
+.logo>img {
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+header.dhl>nav>ul {
+    display: flex;
+    width: 200px;
+    height: 30px;
+    justify-content: space-between;
+    justify-items: center;
+}
+
+header.dhl>nav>ul>li {
+    list-style-type: none;
+    line-height: 30px;
+}
+
+.close {
+    display: none;
+}
+
+@media (max-width:550px) {
+    header.dhl>nav>ul {
+        display: none;
+    }
+
+    .close {
+        display: flex;
+        line-height: 30px;
+        font-size: 40px;
+        transform: rotate(90deg);
+        user-select: none;
+    }
+
+    .list {
+        display: block !important;
+        position: absolute !important;
+        left: 0;
+        right: 0;
+        top: 50px;
+        background-color: black;
+        width: 100% !important;
+        height: calc(100vh - 50px) !important;
+    }
+
+    .list>li {
+        text-align: center;
+        line-height: 60px !important;
+        border: #fff solid 1px;
+        border-radius: 30px;
+        margin: 30px 40px;
+    }
+
 }

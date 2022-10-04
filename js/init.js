@@ -73,6 +73,21 @@ function init() {
 }
 
 
+function dhl() {
+    let close = document.querySelector('.close');
+    close.addEventListener('click', () => {
+
+        let shows = document.querySelector('.shows');
+        if (shows.classList.length <= 1) {
+            shows.className = 'shows list';
+            close.style.transform = "rotate(45deg)";
+        } else {
+            shows.className = 'shows';
+            close.style.transform = "rotate(90deg)";
+        }
+    })
+}
+
 function aboutme() {
     let aboutme = {
         'markdown': `### 看这里 👋
@@ -110,6 +125,7 @@ function setlist() {
 
 window.onload = function () {
     init();
+    dhl();
     if (gethash() === '') {
         changedata(aboutme());
     } else if (gethash() === "#articlelist") {
