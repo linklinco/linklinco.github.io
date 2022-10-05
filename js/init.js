@@ -67,9 +67,10 @@ function init() {
         if (e.target.tagName === 'A') {
             let url = e.target.getAttribute('href');
             sethash(url);
+            e.target.parentNode.parentNode.style.height = '75px';
+            e.target.parentNode.parentNode.children[0].style.background = '#07c160';
         };
-        if (e.target.className = 'biu') {
-            console.log(1);
+        if (e.target.className === 'biu') {
             if (e.target.parentNode.style.height === 'auto') {
                 e.target.parentNode.style.height = '75px';
                 e.target.style.background = '#07c160';
