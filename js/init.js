@@ -40,6 +40,8 @@ function changedata(data) {
     window.scrollTo(0, 0);
 }
 
+
+
 function init() {
     http('data/data.json', (data) => {
         var nav = document.querySelector('.about');
@@ -82,9 +84,20 @@ function init() {
         }
         e.preventDefault();
     })
+    var showtimeline = document.querySelector('.showtimeline');
+    showtimeline.addEventListener('click', (e) => {
+        e.preventDefault();
+        http('../data/data.json', (data) => {
+            let aside = document.querySelector('.about');
+            let show = document.querySelector('.show');
+            aside.setAttribute('class', 'about notshow');
+            show.innerHTML = '';
+            show.appendChild(create_year(data));
+        })
+    })
 }
 
-
+//导航栏代码
 function dhl() {
     let close = document.querySelector('.close');
     close.addEventListener('click', () => {
@@ -97,9 +110,18 @@ function dhl() {
             shows.className = 'shows';
             close.style.transform = "rotate(90deg)";
         }
+
+    })
+    let dhlclose = document.querySelector('.dhl');
+    dhlclose.addEventListener('click', (e) => {
+        if (e.target.tagName === 'A') {
+            let shows = document.querySelector('.shows');
+            shows.className = 'shows';
+            close.style.transform = "rotate(90deg)";
+        }
     })
 }
-
+//自我介绍
 function aboutme() {
     let aboutme = {
         'markdown': `### 看这里 👋
@@ -128,8 +150,9 @@ If you have any problems in programming, or have any strange ideas, please conta
 <h4 align="center">Made with ❤️ by <a href="https://linklinco.github.io" style="text-decoration:none">Linco</a>🎉</h4>`}
     return aboutme
 }
+
+
 function setlist() {
-    console.log(1);
     let main = document.querySelector('.show');
     main.classList.add('notshow');
 
@@ -155,7 +178,6 @@ window.onload = function () {
 
 }
 window.onhashchange = function () {
-    console.log(gethash());
     if (gethash() === '') {
         changedata(aboutme());
     } else if (gethash() === "#articlelist") {
@@ -164,6 +186,7 @@ window.onhashchange = function () {
     } else {
         let url = gethash().substring(1);
         let main = document.querySelector('.show');
+
         main.setAttribute('id', url)
         http(url, changedata);
     }

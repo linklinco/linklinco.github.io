@@ -1,0 +1,85 @@
+.timeline {
+
+}
+.timeline a:visited,.timeline a:hover,.timeline a{
+  color: rgb(92, 124, 247);
+}
+
+.timeline-year {
+  position: relative;
+  margin: 0 2rem;
+  padding: 1rem;
+}
+@media (width > 900px) {
+  .timeline-year {
+    margin: 0 auto;
+    width: 850px;
+  }
+}
+.timeline-year .year {
+  color: rgb(92, 124, 247);
+  font-size: 30px;
+  font-weight: 700;
+  display: block;
+  height: 30px;
+  line-height: 30px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.timeline-year::after {
+  content: "";
+  border-left: 1px solid gray;
+  position: absolute;
+  top: calc(2rem + 65px);
+  bottom: 0;
+  left: calc(2rem + 6px);
+  z-index: 1;
+}
+.timeline-year-day {
+  display: flex;
+  align-items: center;
+  margin: 1rem;
+}
+.timeline-year-day::before {
+  content: "";
+  display: block;
+  width: 8px !important;
+  height: 8px;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  background-color: rgb(255, 88, 111);
+  z-index: 10;
+  flex: 0 0 auto;
+}
+.timeline-year-day .main {
+  display: flex;
+  align-items: center;
+  border-radius: 15px;
+  background-color: #fff;
+  padding: 10px 10px;
+  margin-left: 1rem;
+  flex: 1 1 auto;
+  box-shadow: 10px 10px 15px 5px rgba(8, 12, 223, 0.1);
+}
+.timeline-year-day .main .time {
+  font-size: 1rem;
+  flex-basis: 32px;
+  text-align: center;
+  padding: 10px;
+  flex: 0 0 2rem;
+  min-height: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.timeline-year-day .main .time .day {
+  font-size: 16px;
+}
+.timeline-year-day .main .title {
+  flex-grow: 1;
+  box-sizing: border-box;
+  border-left: 1px solid gray;
+  line-height: 2rem;
+  padding-left: 1rem;
+  color: grey;
+}
