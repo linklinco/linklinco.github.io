@@ -101,6 +101,9 @@ footer {
         box-sizing: border-box;
 
     }
+    .timeline-year{
+        margin: 0 !important;
+    }
 
     .show {
         order: 1;
