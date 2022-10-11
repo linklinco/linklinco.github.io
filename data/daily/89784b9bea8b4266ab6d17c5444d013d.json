@@ -1,1 +1,0 @@
-{"title": "less语言特性", "topic": "", "label": [], "time": 1664986588, "markdown": "### less语言特性\n\n1、嵌套\n\n```less\n.myclass{\np{\nwidth:100px;\nheight:200px;\n}\n}\n```\n\n2、运算\n\n可以直接在代码中进行`+-*/`运算\n\n```less\n@fontSize: 10px;\n.myclass {\n font-size: @fontSize * 2;\n color:green;\n}\n```\n\n3、父选择器 &\n\n ```\n.select{\n&-first{\n\n}\n&-second{\n\n}\n&-third{\n\n}\n}\n ```\n\n"}
