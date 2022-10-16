@@ -30,7 +30,7 @@
   border-left: 1px solid gray;
   position: absolute;
   top: calc(2rem + 65px);
-  bottom: 0;
+  bottom: calc(2rem + 40px);
   left: calc(2rem + 6px);
   z-index: 1;
 }

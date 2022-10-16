@@ -52,7 +52,7 @@ for key in articles:
             tmp['title'] = art
             tmp['topic'] = ''
             tmp['label'] = []
-        tmp['time'] = int(os.path.getctime(os.path.join(
+        tmp['time'] = int(os.path.getmtime(os.path.join(
             os.getcwd()+'\\md\\'+'\\'+key+'\\'+article)))
         tmp_name = ''.join(str(uuid.uuid4()).split('-'))+'.json'
         tmp_names = os.path.join(key, tmp_name)
