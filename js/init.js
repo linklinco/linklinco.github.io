@@ -2,6 +2,8 @@
 function convert(value) {
     var text = value;
     var converter = new showdown.Converter();
+    //设置开启表格解析
+    converter.setOption("tables", true);
     var html = converter.makeHtml(text);
     return html;
 }
