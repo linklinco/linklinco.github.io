@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-image: url('./flower.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .show {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            height: 100vh;
+
+        }
+
+        .show img {
+            display: block;
+            width: 700px;
+            margin: 0 auto;
+            padding-top: 20vh;
+            cursor: pointer;
+        }
+
+        .buff {
+            font-size: 24px;
+            color: pink;
+            background-color: #fff;
+            border-radius: 50px;
+            width: 400px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            margin: 0 auto;
+
+        }
+
+        #number {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 20px;
+            color: gold;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        #showadd {
+            position: absolute;
+            top: 200px;
+            left: 330px;
+            color: goldenrod;
+            animation: xiaos 0.8s ease 1;
+            display: none;
+        }
+
+        @keyframes xiaos {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                top: 0;
+                opacity: 0;
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <audio src="./output.mp3" id="music"></audio>
+    <div class="show">
+        <span id="number" value="0">功德数：0</span>
+        <span id="showadd">功德+1</span>
+        <img src="./muyu.png" alt="" id="add">
+        <div class="buff">
+            <input type="checkbox" name="" id="auto">
+            <label for="auto">自动加功德</label>
+        </div>
+
+    </div>
+
+    <script>
+        //节流
+        function throttle(fn, delay) {
+            var context, args;
+            var previous = Date.now();
+            return function () {
+                var now = Date.now();
+                console.log(now - previous);
+                context = this;
+                args = arguments;
+                if (now - previous >= delay) {
+                    previous = now;
+                    fn.apply(context, args);
+
+                }
+            };
+        }
+
+        function addshow() {
+            document.querySelector('#showadd').setAttribute('style', 'display:block')
+            setTimeout(() => {
+                document.querySelector('#showadd').setAttribute('style', 'display:none')
+            }, 700)
+        }
+        function player() {
+            const music = document.getElementById('music');
+            const num = document.querySelector('#number');
+            num.setAttribute('value', num.getAttribute('value') - 0 + 1);
+            num.innerHTML = "功德数：" + num.getAttribute('value');
+            music.play();
+            addshow();
+        }
+
+        window.onload = function () {
+            const music = document.getElementById('music');
+            const add = document.getElementById('add');
+            add.onclick = throttle(player, 500);
+            const auto = document.querySelector('#auto');
+            var auto_play;
+            auto.addEventListener('change', (e) => {
+                if (auto.checked) {
+                    music.playbackRate = 1.5;
+                    auto_play = setInterval(throttle(player, 500), 0);
+                } else {
+                    music.playbackRate = 1;
+                    clearInterval(auto_play);
+                }
+            })
+            document.querySelector('body').addEventListener('keydown', (e) => {
+                console.log(e.code);
+                if (e.code === 'Space') {
+                    add.onclick.call(null, throttle(player, 500));
+                }
+            })
+        }
+    </script>
+</body>
+
+</html>
