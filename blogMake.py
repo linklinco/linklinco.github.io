@@ -1,4 +1,3 @@
-from opcode import opname
 import os
 from platform import architecture
 import shutil
@@ -10,6 +9,16 @@ from pprint import pprint as print
 # a = uuid.uuid4()
 # a = ''.join(str(a).split('-'))
 # print(a)
+
+
+def aboutme():
+    about_me_path_name = os.path.join(os.getcwd(), 'aboutme.md')
+    data = {}
+    with open(about_me_path_name, 'r', encoding='utf8') as f:
+        data['markdown'] = f.read()
+        data = json.dumps(data, ensure_ascii=False)
+        with open('data\\aboutme.json', 'w+', encoding='utf8') as f1:
+            f1.write(data)
 
 
 def init():
@@ -69,3 +78,4 @@ for key in articles:
 data = json.dumps(res, ensure_ascii=False)
 with open('data\\data.json', 'w+', encoding='utf8') as f:
     f.write(data)
+aboutme()
