@@ -28,8 +28,7 @@ def init():
 
 
 init()
-# 文件名格式就是name@topic%time#label  name、topic、time只能有一个 label无数个
-
+# 文件名格式就是$name@topic%time#label  name、topic、time只能有一个 label无数个 如果以$开头表示加密
 
 md = os.path.join(os.getcwd(), 'md')
 data = []

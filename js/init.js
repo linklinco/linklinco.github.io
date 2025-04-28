@@ -28,9 +28,6 @@ function gethash() {
     return location.hash;
 }
 
-
-
-
 function changedata(data) {
     let main = document.querySelector('.show');
     main.className = 'show';
