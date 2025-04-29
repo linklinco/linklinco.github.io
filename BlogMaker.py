@@ -7,7 +7,7 @@ class BlogMaker:
         try:
             with open(os.path.join(config, "config.yaml"), "r", encoding='utf8') as f:
                 data = yaml.safe_load(f)
-                self.path = data['md-path']
+                self.path = os.path.join(os.getcwd(),data['md-path'])
                 self.password = data['password']
         except:
             raise ValueError("配置文件无效,请核验")
