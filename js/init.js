@@ -29,14 +29,32 @@ function gethash() {
 }
 
 function changedata(data) {
+
+
     let main = document.querySelector('.show');
     main.className = 'show';
     main.innerHTML = '';
-    let md = document.createElement('article');
-    md.setAttribute('class', 'markdown-body')
-    md.innerHTML = convert(data.markdown);
-    main.appendChild(md);
-    window.scrollTo(0, 0);
+
+    if (data.needPassword) {
+        let password = prompt('请输入密码：');
+        setTimeout(() => {
+            decryptData(data.text, password, (decryptedText) => {
+                let md = document.createElement('article');
+                md.setAttribute('class', 'markdown-body')
+                md.innerHTML = convert(decryptedText);
+                main.appendChild(md);
+                window.scrollTo(0, 0);
+            });
+        }, 0);
+    } else {
+        let md = document.createElement('article');
+        md.setAttribute('class', 'markdown-body')
+        md.innerHTML = convert(data.text);
+        main.appendChild(md);
+        window.scrollTo(0, 0);
+    }
+
+
 }
 
 
@@ -146,7 +164,7 @@ window.onload = function () {
     init();
     dhl();
     if (gethash() === '') {
-        http('data/aboutme.json', changedata)
+        http('data/about.json', changedata)
     } else if (gethash() === "#articlelist") {
         setlist()
     } else {

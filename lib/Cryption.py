@@ -63,7 +63,7 @@ def aes_gcm_encrypt(plaintext, key):
 
     # print("加密密文："+base64.b64encode(ciphertext).decode('utf-8'))
     # print("加密tag；"+base64.b64encode(encryptor.tag).decode('utf-8'))
-    print(len(encryptor.tag))
+    # print(len(encryptor.tag))
 
     data = ciphertext+encryptor.tag
     return base64.b64encode(data).decode('utf-8')

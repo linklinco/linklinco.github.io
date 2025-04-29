@@ -4,6 +4,8 @@ import time
 import json
 from datetime import datetime
 from lib.Cryption import Cryption
+import uuid
+from tqdm import tqdm
 
 class Article:
     def __init__(self,filename):
@@ -65,6 +67,7 @@ class Article:
 
 
 class BlogMaker:
+
     def __init__(self, config=os.getcwd()) -> None:
         try:
             with open(os.path.join(config, "config.yaml"), "r", encoding='utf8') as f:
@@ -74,31 +77,60 @@ class BlogMaker:
                 self.password = data['password']
         except:
             raise ValueError("配置文件无效,请核验")
+    def genReadme(self):
+        if not os.path.exists(self.output):
+            os.mkdir(self.output)
+        with open(os.path.join(self.output, 'about.json'), 'w+', encoding='utf8') as f:
+            data = {}
+            with open(os.path.join(self.path, 'README.MD'), 'r', encoding='utf8') as f1:
+                data['markdown'] = f1.read()
+                data = json.dumps(data, ensure_ascii=False)
+                f.write(data)
+    def __str__(self):
+        return f"md文件夹路径：{self.path}\n输出文件夹路径：{self.output}\n密码：{self.password}"
     def genArticles(self):
+        data = {}
         try:
             if not os.path.exists(self.path):
                 raise FileNotFoundError(f"md文件夹{self.path}不存在，请检查配置文件")
             else:
-                for root, dirs, files in os.walk(self.path):
+
+                for root, dirs, files in tqdm(os.walk(self.path)):
                     for dir in dirs:
-                        os.mkdir(os.path.join(self.output, dir))
+                        if not os.path.exists(os.path.join(self.output, dir)):
+                            os.mkdir(os.path.join(self.output, dir))
+                        if data.get(dir) is None:
+                            data[dir] = []
+
                     for file in files:
-                        cls, doc = os.path.split(os.path.join(root, file))
-                        _, cls = os.path.split(cls)
-                        if cls in self.articles:
-                            self.articles[cls].append(doc)
-                        else:
-                            self.articles[cls] = []
-                            self.articles[cls].append(doc)
+                        fullFilePath = os.path.join(root, file)
+                        filePath,fileName = os.path.split(fullFilePath)
+                        _,fileClass= os.path.split(filePath)
+                        name,fileType = os.path.splitext(fileName)
+                        if fileType == '.md':
+                            articleData = {}
+                            article = Article(name)
+                            article.generate(fullFilePath, self.password)
+                            genName = ''.join(str(uuid.uuid4()).split('-'))+'.json'
+                            with open(os.path.join(self.output,fileClass,genName), 'w+', encoding='utf8') as f:
+                                f.write(article.toJson())
+                            articleData['title'] = article.title
+                            articleData['topic'] = article.topic
+                            articleData['time'] = article.time
+                            articleData['label'] = article.label
+                            articleData['url'] = fileClass+"/"+genName
+                            articleData['needPassword'] = article.needPassword
+                            data[fileClass].append(articleData)
         except FileNotFoundError as e:
             raise e
-
+        with open(os.path.join(self.output, 'data.json'), 'w+', encoding='utf8') as f:
+            f.write(json.dumps(data, ensure_ascii=False))
 
 if __name__ == "__main__":
-    # a = BlogMaker()
-    # print(a.password)
-    # print(a.path)
-    # a.genArticles()
-    a = Article("$test@topic%2023-10-01#test1#test2")
-    a.generate(os.path.join(os.getcwd(), 'index.html'))
-    print(a.toJson())
+    a = BlogMaker()
+    print(a)
+    print("开始生成博客")
+    a.genReadme()
+    a.genArticles()
+    print("博客生成完毕")
+    
