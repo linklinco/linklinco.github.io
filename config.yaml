@@ -1,5 +1,9 @@
 # 设置博客文章路径
 md-path: md
 
+# 设置输出路径
+
+output-path: data
+
 # 设置全局密码
 password: jiejededse
