@@ -1,12 +1,4 @@
-//转化markdown文本为html
-function convert(value) {
-    var text = value;
-    var converter = new showdown.Converter();
-    //设置开启表格解析
-    converter.setOption("tables", true);
-    var html = converter.makeHtml(text);
-    return html;
-}
+// 公共组件函数
 
 function http(url, callback) {
     var xhr = new XMLHttpRequest();
@@ -21,6 +13,24 @@ function http(url, callback) {
     xhr.open('GET', url);
     xhr.send(null);
 }
+
+
+
+
+
+
+//转化markdown文本为html
+function convert(value) {
+    var text = value;
+    var converter = new showdown.Converter();
+    //设置开启表格解析
+    converter.setOption("tables", true);
+    var html = converter.makeHtml(text);
+    return html;
+}
+
+
+
 function sethash(data) {
     location.hash = data
 }
@@ -29,12 +39,9 @@ function gethash() {
 }
 
 function changedata(data) {
-
-
     let main = document.querySelector('.show');
     main.className = 'show';
     main.innerHTML = '';
-
     if (data.needPassword) {
         let password = prompt('请输入密码：');
         setTimeout(() => {
@@ -49,12 +56,10 @@ function changedata(data) {
     } else {
         let md = document.createElement('article');
         md.setAttribute('class', 'markdown-body')
-        md.innerHTML = convert(data.text);
+        md.innerHTML = convert(data.text ? data.text : data.markdown);
         main.appendChild(md);
         window.scrollTo(0, 0);
     }
-
-
 }
 
 
@@ -138,13 +143,6 @@ function dhl() {
         }
     })
 }
-//自我介绍
-// function aboutme() {
-//     let aboutme = {
-//         'markdown': 
-//     }
-//     return aboutme;
-// }
 
 
 
@@ -186,7 +184,5 @@ window.onhashchange = function () {
         main.setAttribute('id', url)
         http(url, changedata);
     }
-
-
 
 }
