@@ -1,5 +1,7 @@
 function create_year(data) {
+    console.log(data);
     let m = getObj(data);
+    console.log(m);
     m.sort((a, b) => b.time - a.time);
     let years = fenzu(m);
     let timeline = document.createElement('div');
@@ -48,7 +50,7 @@ function getObj(data) {
             let a = data[key][i];
             tmp.title = a.title;
             tmp.link = a.url;
-            tmp.time = new Date(a.time * 1000);
+            tmp.time = new Date(a.time);
             tmp.year = tmp.time.getFullYear();
             obj.push(tmp)
         }

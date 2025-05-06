@@ -1,0 +1,1 @@
+{"title": "ubuntu安装docker", "topic": null, "time": "2024-11-17 01:02:26", "label": [], "needPassword": false, "text": "ubuntu安装docker\n\n```\napt install docker-ce docker-ce-cli containerd.io\n\napt install docker.io\n```\n\n\n\n绑定\n\n```\ndocker run -itd -p 80:80 -v /root/html:/usr/share/nginx/html --name web nginx\n```\n\n"}

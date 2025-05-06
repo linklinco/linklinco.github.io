@@ -24,6 +24,9 @@ class Article:
         # 2. 再分割%号，分割出时间
         if '%' in filename:
             filename, self.time = filename.split('%')
+            if len(self.time) == 8:
+                self.time = self.time[0:4] + '-' + self.time[4:6] + '-' + self.time[6:8]
+            self.time = self.time +" 00:00:00"
         else:
             self.time = None
         # 3. 最后分割@号，分割出标题和话题
