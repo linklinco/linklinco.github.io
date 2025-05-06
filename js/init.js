@@ -15,10 +15,6 @@ function http(url, callback) {
 }
 
 
-
-
-
-
 //转化markdown文本为html
 function convert(value) {
     var text = value;

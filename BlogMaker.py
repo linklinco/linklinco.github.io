@@ -94,7 +94,6 @@ class BlogMaker:
             if not os.path.exists(self.path):
                 raise FileNotFoundError(f"md文件夹{self.path}不存在，请检查配置文件")
             else:
-
                 for root, dirs, files in tqdm(os.walk(self.path)):
                     for dir in dirs:
                         if not os.path.exists(os.path.join(self.output, dir)):
@@ -111,7 +110,8 @@ class BlogMaker:
                             articleData = {}
                             article = Article(name)
                             article.generate(fullFilePath, self.password)
-                            genName = ''.join(str(uuid.uuid4()).split('-'))+'.json'
+                            # genName = ''.join(str(uuid.uuid4()).split('-'))+'.json'
+                            genName = ''.join(str(uuid.uuid4()).split('-')) #不应该加后缀
                             with open(os.path.join(self.output,fileClass,genName), 'w+', encoding='utf8') as f:
                                 f.write(article.toJson())
                             articleData['title'] = article.title
