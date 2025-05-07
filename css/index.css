@@ -12,9 +12,6 @@ footer {
     z-index: 10000;
 }
 
-
-
-
 .main_blog {
     overflow: hidden;
     background-image: url(../photos/index.jpg);
@@ -93,16 +90,18 @@ footer {
 }
 
 @media (max-width:800px) {
-    .main_blog{
+    .main_blog {
         flex-direction: column;
     }
+
     .about {
         order: 2;
         width: 100%;
         box-sizing: border-box;
 
     }
-    .timeline-year{
+
+    .timeline-year {
         margin: 0 !important;
     }
 

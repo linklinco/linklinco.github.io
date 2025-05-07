@@ -1,1 +1,1 @@
-python blogMake.py
+python BlogMake.py
